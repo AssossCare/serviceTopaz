@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service>
+    <id>icure-backend</id>
+    <name>icure-backend</name>
+    <description>icure-backend Windows Service</description>
+    <executable>java</executable>
+    <arguments>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -Xmx1024m -Dorg.ektorp.support.AutoUpdateViewOnChange=true -Dicure.authentication.local=true -Dfile.encoding=utf8 -jar icure-backend-1.0.93-0-g5e3d1a7f63.jar </arguments>
+    <logmode>rotate</logmode>
+	<onfailure action="restart" delay="10 sec"/>
+</service>
